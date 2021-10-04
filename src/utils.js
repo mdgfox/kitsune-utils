@@ -15,6 +15,10 @@ function clearEmptyValuesFromArray(array) {
     return array.filter(Boolean);
 }
 
+function convertConstantToTitleString(constant) {
+    return constant.split('_').join(' ').replace(/(^w{1})|(\s{1}\w{1})/g, (match) => match.toUpperCase());
+}
+
   var testObject = {
       someValue1: {
           someValue2: {},
@@ -47,3 +51,8 @@ function clearEmptyValuesFromArray(array) {
   console.time('clearArrayFunction');
   console.log(clearEmptyValuesFromArray(testArray));
   console.timeEnd('clearArrayFunction');
+
+  console.log('convertConstantToTitleString(): '); 
+  // some_strange_string => Some Strange String
+  console.log(convertConstantToTitleString(some_strange_string));
+  
