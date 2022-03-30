@@ -1,19 +1,27 @@
-<h1 align="center">Kitsune Utils</h1>
-<p align="center">
+<h1 style="text-align:center">Kitsune Utils</h1>
+<p style="text-align:center">
     Some simple utils for kitsune material library
 </p>
 
 # Installation
-Currently for now not available
+Currently, for now - not available
 
-## Usage
+## Importing
+```js
+import {
+    clearEmptyObjects, 
+    clearEmptyValuesFromArray,
+    convertConstantToTitleString,
+    isObject,
+    findNestedObject,
+} from "utils";
+```
+
+### Usage
 
 clearEmptyObjects()
 Recursive function to remove empty objects, values etc.
 ```js
-// import the function
-import clearEmptyValuesFromArray from "utils";
-
 // prepare values
 var testObject = {
       someValue1: {
@@ -37,32 +45,26 @@ var testObject = {
       ],
   }
 
-clearEmptyObjects(testObject);
+const reducedObject = clearEmptyObjects(testObject);
 
 ```
 clearEmptyValuesFromArray()
 Simple function to remove empty values from array.
 ```js
-// import the function
-import clearEmptyValuesFromArray from "utils";
-
 // prepare values
 var testArray = [1, 2, 3, 4, 5, '', undefined, null, 6, 7, 8];
 
-clearEmptyValuesFromArray(testArray);
+const reducedArray = clearEmptyValuesFromArray(testArray);
 
 ```
 
 convertConstantToTitleString()
 Convert value "some_string_title" to "Some String Title".
 ```js
-// import the function
-import convertConstantToTitleString from "utils";
-
 // prepare values
 var testString = 'some_strange_string';
 
-convertConstantToTitleString(testString);
+const title = convertConstantToTitleString(testString);
 
 ```
 
